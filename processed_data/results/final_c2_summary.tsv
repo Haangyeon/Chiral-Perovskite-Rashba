@@ -1,0 +1,7 @@
+system	edge	window_Ainv	n_points	alpha_a_star_eVA	alpha_b_star_eVA	anisotropy_alpha_a_over_b	line_alpha_a_star_eVA	twoD_vs_line_relative_difference_percent	split_half_rmse_meV	status
+S	valence	0.01	317	0.528197	0.029903	17.664	0.528319	0.0231	0.001810	resolved
+S	conduction	0.01	317	2.559124	0.244496	10.467	2.559302	0.0069	0.003985	resolved
+Rstar	valence	0.01	317	0.528192	0.029899	17.666	0.528317	0.0236	0.001854	resolved
+Rstar	conduction	0.01	317	2.559142	0.244506	10.467	2.559334	0.0075	0.003996	resolved
+Rac	valence	0.01	317	N/A	N/A	N/A	N/A	N/A	N/A	unresolved_at_output_precision
+Rac	conduction	0.01	317	N/A	N/A	N/A	N/A	N/A	N/A	unresolved_at_output_precision

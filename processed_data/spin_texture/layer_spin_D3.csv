@@ -1,0 +1,6 @@
+system,mean_absS_inorganic,mean_absS_organic,ratio_inorganic_over_total,notes
+S,0.3037837216,0.000953125,0.9968723014,"CBM branch atom-projected spin; atom grouping verified in atom_group_mapping.txt (inorganic=Pb+I atoms 45-46,79-86; organic=H,C,N,Br atoms 1-44,47-78,87-94)"
+R,0.3015777945,0.001113310922,0.9963219569,"CBM branch atom-projected spin; atom grouping verified in atom_group_mapping.txt (inorganic=Pb+I atoms 45-46,79-86; organic=H,C,N,Br atoms 1-44,47-78,87-94)"
+Rac,0.0006143577462,1.3671875e-05,0.9782305252,"PT-pair averaged atom-projected spin; atom grouping verified in atom_group_mapping.txt (inorganic=Pb+I atoms 45-46,79-86; organic=H,C,N,Br atoms 1-44,47-78,87-94)"
+3ClMBA,0.3060739609,0.001041598088,0.996608449,"CBM branch atom-projected spin; atom grouping verified in atom_group_mapping.txt (inorganic=Pb+I atoms 45-46,79-86; organic=H,C,N,Br atoms 1-44,47-78,87-94)"
+4BrMBA,0.3096002541,0.001060736164,0.9965855508,"CBM branch atom-projected spin; atom grouping verified in atom_group_mapping.txt (inorganic=Pb+I atoms 45-46,79-86; organic=H,C,N,Br atoms 1-44,47-78,87-94)"

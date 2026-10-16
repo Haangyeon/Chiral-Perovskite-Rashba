@@ -1,0 +1,609 @@
+{
+  "analysis_version": "final_c2_v1",
+  "definitions": {
+    "coordinate_basis": "unit reciprocal-lattice directions a* and b*; q in inverse angstrom",
+    "c2_operation": "for unique real-space b axis: (q_a*,q_b*) -> (-q_a*,q_b*)",
+    "mean_dispersion": "Emean=E0+Ca*q_a*^2+Cb*q_b*^2",
+    "splitting": "DeltaE/2=sqrt(alpha_a*^2*q_a*^2+alpha_b*^2*q_b*^2)",
+    "reported_alpha": "directional SOC coupling norm, not a signed full spin-orbit tensor",
+    "final_window_Ainv": 0.01,
+    "final_window_points": 317,
+    "Rac_rule": "N/A when the PT-doublet splitting is at or below 0.001 meV output resolution",
+    "k0_ER_rule": "not reported; model extrema lie outside the sampled line interval",
+    "energy_output_quantum_eV": 1e-06
+  },
+  "input_files": {
+    "S_grid_map": {
+      "archive_member": "02_kpoints_mapping/S/grid_441_map.tsv",
+      "sha256": "6e809876feaabb21e01db31ef333855bd482e9abbbca15e4bb9880a34a579b7f"
+    },
+    "S_grid_bands": {
+      "archive_member": "01_raw_analysis_data/merged_selected_bands/S_grid_merged_selected_bands.tsv.gz",
+      "sha256": "dba9f2c918692d55b9fc2f5755f57b6190e18417648fe4719dff116891e45ff1"
+    },
+    "Rstar_grid_map": {
+      "archive_member": "02_kpoints_mapping/Rstar/grid_441_map.tsv",
+      "sha256": "6e809876feaabb21e01db31ef333855bd482e9abbbca15e4bb9880a34a579b7f"
+    },
+    "Rstar_grid_bands": {
+      "archive_member": "01_raw_analysis_data/merged_selected_bands/Rstar_grid_merged_selected_bands.tsv.gz",
+      "sha256": "d53db07fbdd3a2698a5cf14435ef94147d2cfe840d6e23db4c84b32db77190f5"
+    },
+    "Rac_grid_map": {
+      "archive_member": "02_kpoints_mapping/Rac/grid_441_map.tsv",
+      "sha256": "6e809876feaabb21e01db31ef333855bd482e9abbbca15e4bb9880a34a579b7f"
+    },
+    "Rac_grid_bands": {
+      "archive_member": "01_raw_analysis_data/merged_selected_bands/Rac_grid_merged_selected_bands.tsv.gz",
+      "sha256": "bddcb9d239e8ef458097219415c018274e508988227eaf006d6ae688b0287850"
+    },
+    "S_line_map": {
+      "archive_member": "02_kpoints_mapping/S/line_Gamma_X_61_map.tsv",
+      "sha256": "12cda88e7a40547106379825b32d6ad2c9b7ea9e010c52954e52d6f97a838bb9"
+    },
+    "S_line_bands": {
+      "archive_member": "01_raw_analysis_data/merged_selected_bands/S_line_merged_selected_bands.tsv.gz",
+      "sha256": "a5d3be53c576e7a0bb8c5abc446bfc6d7d361c80c82e4abfba81700ed646701c"
+    },
+    "Rstar_line_map": {
+      "archive_member": "02_kpoints_mapping/Rstar/line_Gamma_X_61_map.tsv",
+      "sha256": "12cda88e7a40547106379825b32d6ad2c9b7ea9e010c52954e52d6f97a838bb9"
+    },
+    "Rstar_line_bands": {
+      "archive_member": "01_raw_analysis_data/merged_selected_bands/Rstar_line_merged_selected_bands.tsv.gz",
+      "sha256": "cf10a44dd51cc91e03d07ce6d6c5a9e041565d05455f6edeffc8614c99199df1"
+    },
+    "Rac_line_map": {
+      "archive_member": "02_kpoints_mapping/Rac/line_Gamma_X_61_map.tsv",
+      "sha256": "12cda88e7a40547106379825b32d6ad2c9b7ea9e010c52954e52d6f97a838bb9"
+    },
+    "Rac_line_bands": {
+      "archive_member": "01_raw_analysis_data/merged_selected_bands/Rac_line_merged_selected_bands.tsv.gz",
+      "sha256": "d8fc9aef3b2243ead7c2804aef65e4dbee774d003e10aee22fde2f8e048f0b93"
+    }
+  },
+  "fits": {
+    "S": {
+      "valence": {
+        "status": "resolved",
+        "windows": [
+          {
+            "alpha_a_star_eVA": 0.5287456148886361,
+            "alpha_b_star_eVA": 0.02996087556307771,
+            "anisotropy_alpha_a_over_b": 17.647869261211973,
+            "split_half_rmse_meV": 0.0003429731516120339,
+            "split_half_max_abs_residual_meV": 0.0007631553340966928,
+            "mean_dispersion_E0_eV": 2.268021319955519,
+            "mean_curvature_Ca_eVA2": -6.2577285832416285,
+            "mean_curvature_Cb_eVA2": -8.619488901534162,
+            "mean_dispersion_rmse_meV": 0.00016843448271011355,
+            "axis_only_alpha_a_star_eVA": 0.5287454545454571,
+            "axis_only_alpha_b_star_eVA": 0.029963636363642115,
+            "n_points": 81,
+            "window_Ainv": 0.005
+          },
+          {
+            "alpha_a_star_eVA": 0.528468795072105,
+            "alpha_b_star_eVA": 0.02992840476970753,
+            "anisotropy_alpha_a_over_b": 17.6577668986555,
+            "split_half_rmse_meV": 0.0007470416787273091,
+            "split_half_max_abs_residual_meV": 0.001593614783690139,
+            "mean_dispersion_E0_eV": 2.2680212505550763,
+            "mean_curvature_Ca_eVA2": -6.252852118714866,
+            "mean_curvature_Cb_eVA2": -8.615053125843273,
+            "mean_dispersion_rmse_meV": 0.00019232510060676548,
+            "axis_only_alpha_a_star_eVA": 0.5285464285714334,
+            "axis_only_alpha_b_star_eVA": 0.029960714285729276,
+            "n_points": 177,
+            "window_Ainv": 0.0075
+          },
+          {
+            "alpha_a_star_eVA": 0.5280134251710653,
+            "alpha_b_star_eVA": 0.029843071478968843,
+            "anisotropy_alpha_a_over_b": 17.69299870970619,
+            "split_half_rmse_meV": 0.00190605484028231,
+            "split_half_max_abs_residual_meV": 0.004400810005794099,
+            "mean_dispersion_E0_eV": 2.26802120718984,
+            "mean_curvature_Ca_eVA2": -6.250801090706647,
+            "mean_curvature_Cb_eVA2": -8.613385666610851,
+            "mean_dispersion_rmse_meV": 0.00020510943002021245,
+            "axis_only_alpha_a_star_eVA": 0.5281298701298701,
+            "axis_only_alpha_b_star_eVA": 0.02990259740260153,
+            "n_points": 317,
+            "window_Ainv": 0.01
+          }
+        ],
+        "final": {
+          "alpha_a_star_eVA": 0.5280134251710653,
+          "alpha_b_star_eVA": 0.029843071478968843,
+          "anisotropy_alpha_a_over_b": 17.69299870970619,
+          "split_half_rmse_meV": 0.00190605484028231,
+          "split_half_max_abs_residual_meV": 0.004400810005794099,
+          "mean_dispersion_E0_eV": 2.26802120718984,
+          "mean_curvature_Ca_eVA2": -6.250801090706647,
+          "mean_curvature_Cb_eVA2": -8.613385666610851,
+          "mean_dispersion_rmse_meV": 0.00020510943002021245,
+          "axis_only_alpha_a_star_eVA": 0.5281298701298701,
+          "axis_only_alpha_b_star_eVA": 0.02990259740260153,
+          "n_points": 317,
+          "window_Ainv": 0.01
+        },
+        "gamma_x_check": {
+          "window_Ainv": 0.01,
+          "n_nonzero_points": 20,
+          "alpha_a_star_eVA": 0.5283194805194928,
+          "split_half_rmse_meV": 0.0024073615454208667,
+          "mean_curvature_Ca_eVA2": -6.262380476674763,
+          "mean_dispersion_rmse_meV": 0.0002110072212142733
+        },
+        "independent_window_variation_percent": {
+          "alpha_a_star": 0.138668769138515,
+          "alpha_b_star": 0.3947451729018167
+        }
+      },
+      "conduction": {
+        "status": "resolved",
+        "windows": [
+          {
+            "alpha_a_star_eVA": 2.5609117766763783,
+            "alpha_b_star_eVA": 0.24464586291545665,
+            "anisotropy_alpha_a_over_b": 10.467831935344698,
+            "split_half_rmse_meV": 0.0005559870304587991,
+            "split_half_max_abs_residual_meV": 0.0012646699711115275,
+            "mean_dispersion_E0_eV": 4.009885679501639,
+            "mean_curvature_Ca_eVA2": 11.578919695775268,
+            "mean_curvature_Cb_eVA2": 11.877278721071065,
+            "mean_dispersion_rmse_meV": 0.00021788773024567404,
+            "axis_only_alpha_a_star_eVA": 2.560963636363687,
+            "axis_only_alpha_b_star_eVA": 0.2446727272727323,
+            "n_points": 81,
+            "window_Ainv": 0.005
+          },
+          {
+            "alpha_a_star_eVA": 2.5602862905134036,
+            "alpha_b_star_eVA": 0.24457969093790233,
+            "anisotropy_alpha_a_over_b": 10.468106655525412,
+            "split_half_rmse_meV": 0.0016218748408263726,
+            "split_half_max_abs_residual_meV": 0.003178297103698796,
+            "mean_dispersion_E0_eV": 4.009885834285265,
+            "mean_curvature_Ca_eVA2": 11.569479239658813,
+            "mean_curvature_Cb_eVA2": 11.862125064257906,
+            "mean_dispersion_rmse_meV": 0.0002574940357134933,
+            "axis_only_alpha_a_star_eVA": 2.56048571428574,
+            "axis_only_alpha_b_star_eVA": 0.2446607142857176,
+            "n_points": 177,
+            "window_Ainv": 0.0075
+          },
+          {
+            "alpha_a_star_eVA": 2.5593049802515853,
+            "alpha_b_star_eVA": 0.24450806389502572,
+            "anisotropy_alpha_a_over_b": 10.467159812571122,
+            "split_half_rmse_meV": 0.004011098853331927,
+            "split_half_max_abs_residual_meV": 0.009431524300891614,
+            "mean_dispersion_E0_eV": 4.00988611631538,
+            "mean_curvature_Ca_eVA2": 11.559312577986828,
+            "mean_curvature_Cb_eVA2": 11.851208034591782,
+            "mean_dispersion_rmse_meV": 0.000386567194310309,
+            "axis_only_alpha_a_star_eVA": 2.5594909090909224,
+            "axis_only_alpha_b_star_eVA": 0.24462857142859218,
+            "n_points": 317,
+            "window_Ainv": 0.01
+          }
+        ],
+        "final": {
+          "alpha_a_star_eVA": 2.5593049802515853,
+          "alpha_b_star_eVA": 0.24450806389502572,
+          "anisotropy_alpha_a_over_b": 10.467159812571122,
+          "split_half_rmse_meV": 0.004011098853331927,
+          "split_half_max_abs_residual_meV": 0.009431524300891614,
+          "mean_dispersion_E0_eV": 4.00988611631538,
+          "mean_curvature_Ca_eVA2": 11.559312577986828,
+          "mean_curvature_Cb_eVA2": 11.851208034591782,
+          "mean_dispersion_rmse_meV": 0.000386567194310309,
+          "axis_only_alpha_a_star_eVA": 2.5594909090909224,
+          "axis_only_alpha_b_star_eVA": 0.24462857142859218,
+          "n_points": 317,
+          "window_Ainv": 0.01
+        },
+        "gamma_x_check": {
+          "window_Ainv": 0.01,
+          "n_nonzero_points": 20,
+          "alpha_a_star_eVA": 2.5593019480519494,
+          "split_half_rmse_meV": 0.005385383356468749,
+          "mean_curvature_Ca_eVA2": 11.57255839398622,
+          "mean_dispersion_rmse_meV": 0.00011571723531567475
+        },
+        "independent_window_variation_percent": {
+          "alpha_a_star": 0.06278253030379555,
+          "alpha_b_star": 0.05635765881737535
+        }
+      }
+    },
+    "Rstar": {
+      "valence": {
+        "status": "resolved",
+        "windows": [
+          {
+            "alpha_a_star_eVA": 0.5289082426659188,
+            "alpha_b_star_eVA": 0.030005318474172794,
+            "anisotropy_alpha_a_over_b": 17.627149770837423,
+            "split_half_rmse_meV": 0.00039119925143356007,
+            "split_half_max_abs_residual_meV": 0.0007752720023184063,
+            "mean_dispersion_E0_eV": 2.2681778129460004,
+            "mean_curvature_Ca_eVA2": -6.263550277153975,
+            "mean_curvature_Cb_eVA2": -8.627796920630312,
+            "mean_dispersion_rmse_meV": 0.00021036361108734179,
+            "axis_only_alpha_a_star_eVA": 0.5289181818181883,
+            "axis_only_alpha_b_star_eVA": 0.02999999999999468,
+            "n_points": 81,
+            "window_Ainv": 0.005
+          },
+          {
+            "alpha_a_star_eVA": 0.5286287558850634,
+            "alpha_b_star_eVA": 0.029950405263360878,
+            "anisotropy_alpha_a_over_b": 17.65013699269535,
+            "split_half_rmse_meV": 0.0008037687899604694,
+            "split_half_max_abs_residual_meV": 0.0016137323448847402,
+            "mean_dispersion_E0_eV": 2.2681777734547093,
+            "mean_curvature_Ca_eVA2": -6.260394706597336,
+            "mean_curvature_Cb_eVA2": -8.62541778674679,
+            "mean_dispersion_rmse_meV": 0.00021641957457057032,
+            "axis_only_alpha_a_star_eVA": 0.5287428571428497,
+            "axis_only_alpha_b_star_eVA": 0.02999999999999194,
+            "n_points": 177,
+            "window_Ainv": 0.0075
+          },
+          {
+            "alpha_a_star_eVA": 0.5281922643777885,
+            "alpha_b_star_eVA": 0.029898610381403526,
+            "anisotropy_alpha_a_over_b": 17.666114165169226,
+            "split_half_rmse_meV": 0.0018544149858812271,
+            "split_half_max_abs_residual_meV": 0.0043443617191466985,
+            "mean_dispersion_E0_eV": 2.2681776098584203,
+            "mean_curvature_Ca_eVA2": -6.256508496685563,
+            "mean_curvature_Cb_eVA2": -8.61637747874573,
+            "mean_dispersion_rmse_meV": 0.00024394786592294235,
+            "axis_only_alpha_a_star_eVA": 0.5283168831168792,
+            "axis_only_alpha_b_star_eVA": 0.029962337662334568,
+            "n_points": 317,
+            "window_Ainv": 0.01
+          }
+        ],
+        "final": {
+          "alpha_a_star_eVA": 0.5281922643777885,
+          "alpha_b_star_eVA": 0.029898610381403526,
+          "anisotropy_alpha_a_over_b": 17.666114165169226,
+          "split_half_rmse_meV": 0.0018544149858812271,
+          "split_half_max_abs_residual_meV": 0.0043443617191466985,
+          "mean_dispersion_E0_eV": 2.2681776098584203,
+          "mean_curvature_Ca_eVA2": -6.256508496685563,
+          "mean_curvature_Cb_eVA2": -8.61637747874573,
+          "mean_dispersion_rmse_meV": 0.00024394786592294235,
+          "axis_only_alpha_a_star_eVA": 0.5283168831168792,
+          "axis_only_alpha_b_star_eVA": 0.029962337662334568,
+          "n_points": 317,
+          "window_Ainv": 0.01
+        },
+        "gamma_x_check": {
+          "window_Ainv": 0.01,
+          "n_nonzero_points": 20,
+          "alpha_a_star_eVA": 0.5283168831168792,
+          "split_half_rmse_meV": 0.002357758675952196,
+          "mean_curvature_Ca_eVA2": -6.260358688937799,
+          "mean_dispersion_rmse_meV": 0.0001945373338922657
+        },
+        "independent_window_variation_percent": {
+          "alpha_a_star": 0.13555258878577617,
+          "alpha_b_star": 0.3568998405211476
+        }
+      },
+      "conduction": {
+        "status": "resolved",
+        "windows": [
+          {
+            "alpha_a_star_eVA": 2.5607490389738587,
+            "alpha_b_star_eVA": 0.24466398852032287,
+            "anisotropy_alpha_a_over_b": 10.46639129224018,
+            "split_half_rmse_meV": 0.0005509497520573265,
+            "split_half_max_abs_residual_meV": 0.0012606576711877981,
+            "mean_dispersion_E0_eV": 4.009782765723984,
+            "mean_curvature_Ca_eVA2": 11.579940770086607,
+            "mean_curvature_Cb_eVA2": 11.867732913208673,
+            "mean_dispersion_rmse_meV": 0.00018555647886934977,
+            "axis_only_alpha_a_star_eVA": 2.560754545454522,
+            "axis_only_alpha_b_star_eVA": 0.2446727272727323,
+            "n_points": 81,
+            "window_Ainv": 0.005
+          },
+          {
+            "alpha_a_star_eVA": 2.5601202892077564,
+            "alpha_b_star_eVA": 0.2445840264468695,
+            "anisotropy_alpha_a_over_b": 10.467242388635245,
+            "split_half_rmse_meV": 0.0015889425120606145,
+            "split_half_max_abs_residual_meV": 0.0030169571643319515,
+            "mean_dispersion_E0_eV": 4.009782858076539,
+            "mean_curvature_Ca_eVA2": 11.571460428332305,
+            "mean_curvature_Cb_eVA2": 11.861063869374616,
+            "mean_dispersion_rmse_meV": 0.00021335714802554433,
+            "axis_only_alpha_a_star_eVA": 2.560310714285698,
+            "axis_only_alpha_b_star_eVA": 0.2446607142857176,
+            "n_points": 177,
+            "window_Ainv": 0.0075
+          },
+          {
+            "alpha_a_star_eVA": 2.5591417183917695,
+            "alpha_b_star_eVA": 0.2445064083154705,
+            "anisotropy_alpha_a_over_b": 10.466562966684611,
+            "split_half_rmse_meV": 0.0039956652658819855,
+            "split_half_max_abs_residual_meV": 0.009128059611590578,
+            "mean_dispersion_E0_eV": 4.009783098274481,
+            "mean_curvature_Ca_eVA2": 11.561167203068289,
+            "mean_curvature_Cb_eVA2": 11.852628324050013,
+            "mean_dispersion_rmse_meV": 0.00034819360838861456,
+            "axis_only_alpha_a_star_eVA": 2.5593337662337654,
+            "axis_only_alpha_b_star_eVA": 0.24462272727272527,
+            "n_points": 317,
+            "window_Ainv": 0.01
+          }
+        ],
+        "final": {
+          "alpha_a_star_eVA": 2.5591417183917695,
+          "alpha_b_star_eVA": 0.2445064083154705,
+          "anisotropy_alpha_a_over_b": 10.466562966684611,
+          "split_half_rmse_meV": 0.0039956652658819855,
+          "split_half_max_abs_residual_meV": 0.009128059611590578,
+          "mean_dispersion_E0_eV": 4.009783098274481,
+          "mean_curvature_Ca_eVA2": 11.561167203068289,
+          "mean_curvature_Cb_eVA2": 11.852628324050013,
+          "mean_dispersion_rmse_meV": 0.00034819360838861456,
+          "axis_only_alpha_a_star_eVA": 2.5593337662337654,
+          "axis_only_alpha_b_star_eVA": 0.24462272727272527,
+          "n_points": 317,
+          "window_Ainv": 0.01
+        },
+        "gamma_x_check": {
+          "window_Ainv": 0.01,
+          "n_nonzero_points": 20,
+          "alpha_a_star_eVA": 2.5593337662337654,
+          "split_half_rmse_meV": 0.005290189400734408,
+          "mean_curvature_Ca_eVA2": 11.57154750010367,
+          "mean_dispersion_rmse_meV": 9.812232709928503e-05
+        },
+        "independent_window_variation_percent": {
+          "alpha_a_star": 0.06280701731123023,
+          "alpha_b_star": 0.06444829235275511
+        }
+      }
+    },
+    "Rac": {
+      "valence": {
+        "status": "unresolved_at_output_precision",
+        "windows": [
+          {
+            "alpha_a_star_eVA": 3.99239537432138e-05,
+            "alpha_b_star_eVA": 2.0903437623502834e-09,
+            "anisotropy_alpha_a_over_b": 19099.22877867954,
+            "split_half_rmse_meV": 0.00018127112759954106,
+            "split_half_max_abs_residual_meV": 0.00042015209225197025,
+            "mean_dispersion_E0_eV": 2.3945035151205323,
+            "mean_curvature_Ca_eVA2": 0.22424928173683667,
+            "mean_curvature_Cb_eVA2": -14.700912329427082,
+            "mean_dispersion_rmse_meV": 0.0002446702436621003,
+            "axis_only_alpha_a_star_eVA": 2.727272726442788e-05,
+            "axis_only_alpha_b_star_eVA": 0.0,
+            "n_points": 81,
+            "window_Ainv": 0.005
+          },
+          {
+            "alpha_a_star_eVA": 1.2666657038911512e-05,
+            "alpha_b_star_eVA": 1.2370588133345919e-05,
+            "anisotropy_alpha_a_over_b": 1.023933292611005,
+            "split_half_rmse_meV": 0.0001797693234211901,
+            "split_half_max_abs_residual_meV": 0.00046458951262689325,
+            "mean_dispersion_E0_eV": 2.3945033662484496,
+            "mean_curvature_Ca_eVA2": 0.2339663368058974,
+            "mean_curvature_Cb_eVA2": -14.684057162977371,
+            "mean_dispersion_rmse_meV": 0.00023478125841965074,
+            "axis_only_alpha_a_star_eVA": 1.0714285711025237e-05,
+            "axis_only_alpha_b_star_eVA": 0.0,
+            "n_points": 177,
+            "window_Ainv": 0.0075
+          },
+          {
+            "alpha_a_star_eVA": 1.0923186249692839e-05,
+            "alpha_b_star_eVA": 5.751943496451017e-06,
+            "anisotropy_alpha_a_over_b": 1.8990426899069,
+            "split_half_rmse_meV": 0.00017116738806679073,
+            "split_half_max_abs_residual_meV": 0.00047530985186676955,
+            "mean_dispersion_E0_eV": 2.3945032046637924,
+            "mean_curvature_Ca_eVA2": 0.23707485390272937,
+            "mean_curvature_Cb_eVA2": -14.673981976323624,
+            "mean_dispersion_rmse_meV": 0.00028430863390550983,
+            "axis_only_alpha_a_star_eVA": 1.4285714281366984e-05,
+            "axis_only_alpha_b_star_eVA": 1.2987012988828284e-05,
+            "n_points": 317,
+            "window_Ainv": 0.01
+          }
+        ],
+        "final": {
+          "alpha_a_star_eVA": 1.0923186249692839e-05,
+          "alpha_b_star_eVA": 5.751943496451017e-06,
+          "anisotropy_alpha_a_over_b": 1.8990426899069,
+          "split_half_rmse_meV": 0.00017116738806679073,
+          "split_half_max_abs_residual_meV": 0.00047530985186676955,
+          "mean_dispersion_E0_eV": 2.3945032046637924,
+          "mean_curvature_Ca_eVA2": 0.23707485390272937,
+          "mean_curvature_Cb_eVA2": -14.673981976323624,
+          "mean_dispersion_rmse_meV": 0.00028430863390550983,
+          "axis_only_alpha_a_star_eVA": 1.4285714281366984e-05,
+          "axis_only_alpha_b_star_eVA": 1.2987012988828284e-05,
+          "n_points": 317,
+          "window_Ainv": 0.01
+        },
+        "gamma_x_check": {
+          "window_Ainv": 0.01,
+          "n_nonzero_points": 20,
+          "alpha_a_star_eVA": 1.4285714281366984e-05,
+          "split_half_rmse_meV": 0.00020528725512609897,
+          "mean_curvature_Ca_eVA2": 0.2386185243299507,
+          "mean_dispersion_rmse_meV": 0.00023339686654197156
+        },
+        "independent_window_variation_percent": {
+          "alpha_a_star": 265.49732679268806,
+          "alpha_b_star": 215.0316288262394
+        }
+      },
+      "conduction": {
+        "status": "unresolved_at_output_precision",
+        "windows": [
+          {
+            "alpha_a_star_eVA": 1e-10,
+            "alpha_b_star_eVA": 1e-10,
+            "anisotropy_alpha_a_over_b": 1.0,
+            "split_half_rmse_meV": 3.603838831161524e-10,
+            "split_half_max_abs_residual_meV": 5.000000000000001e-10,
+            "mean_dispersion_E0_eV": 3.8185470945916022,
+            "mean_curvature_Ca_eVA2": -0.0029656852911529633,
+            "mean_curvature_Cb_eVA2": 17.91995823310027,
+            "mean_dispersion_rmse_meV": 0.00022175056592604937,
+            "axis_only_alpha_a_star_eVA": 0.0,
+            "axis_only_alpha_b_star_eVA": 0.0,
+            "n_points": 81,
+            "window_Ainv": 0.005
+          },
+          {
+            "alpha_a_star_eVA": 9.998906989065109e-06,
+            "alpha_b_star_eVA": 5.79721048480655e-06,
+            "anisotropy_alpha_a_over_b": 1.7247790148849091,
+            "split_half_rmse_meV": 0.00012276581413779385,
+            "split_half_max_abs_residual_meV": 0.00045987783733544336,
+            "mean_dispersion_E0_eV": 3.8185472391455892,
+            "mean_curvature_Ca_eVA2": -0.004632783488185247,
+            "mean_curvature_Cb_eVA2": 17.90321446788521,
+            "mean_dispersion_rmse_meV": 0.0002668502626735947,
+            "axis_only_alpha_a_star_eVA": 0.0,
+            "axis_only_alpha_b_star_eVA": 0.0,
+            "n_points": 177,
+            "window_Ainv": 0.0075
+          },
+          {
+            "alpha_a_star_eVA": 8.417248083105095e-06,
+            "alpha_b_star_eVA": 1.2987516271843232e-06,
+            "anisotropy_alpha_a_over_b": 6.481029865081733,
+            "split_half_rmse_meV": 0.00013079620874218247,
+            "split_half_max_abs_residual_meV": 0.0004814494348607573,
+            "mean_dispersion_E0_eV": 3.818547445318778,
+            "mean_curvature_Ca_eVA2": -0.006860669256855039,
+            "mean_curvature_Cb_eVA2": 17.88805401767014,
+            "mean_dispersion_rmse_meV": 0.0003015527029858987,
+            "axis_only_alpha_a_star_eVA": 0.0,
+            "axis_only_alpha_b_star_eVA": 0.0,
+            "n_points": 317,
+            "window_Ainv": 0.01
+          }
+        ],
+        "final": {
+          "alpha_a_star_eVA": 8.417248083105095e-06,
+          "alpha_b_star_eVA": 1.2987516271843232e-06,
+          "anisotropy_alpha_a_over_b": 6.481029865081733,
+          "split_half_rmse_meV": 0.00013079620874218247,
+          "split_half_max_abs_residual_meV": 0.0004814494348607573,
+          "mean_dispersion_E0_eV": 3.818547445318778,
+          "mean_curvature_Ca_eVA2": -0.006860669256855039,
+          "mean_curvature_Cb_eVA2": 17.88805401767014,
+          "mean_dispersion_rmse_meV": 0.0003015527029858987,
+          "axis_only_alpha_a_star_eVA": 0.0,
+          "axis_only_alpha_b_star_eVA": 0.0,
+          "n_points": 317,
+          "window_Ainv": 0.01
+        },
+        "gamma_x_check": {
+          "window_Ainv": 0.01,
+          "n_nonzero_points": 20,
+          "alpha_a_star_eVA": 0.0,
+          "split_half_rmse_meV": 0.0,
+          "mean_curvature_Ca_eVA2": -7.338104472473426e-12,
+          "mean_dispersion_rmse_meV": 3.4399002279594065e-13
+        },
+        "independent_window_variation_percent": {
+          "alpha_a_star": 118.78950091936201,
+          "alpha_b_star": 446.3602095632874
+        }
+      }
+    }
+  },
+  "symmetry": {
+    "C2": {
+      "S": {
+        "valence": {
+          "mapping": "C2 about real-space b: (q_a*, q_b*) -> (-q_a*, q_b*)",
+          "max_mean_energy_error_meV": 0.000500000000069889,
+          "max_full_split_error_meV": 0.001000000000139778
+        },
+        "conduction": {
+          "mapping": "C2 about real-space b: (q_a*, q_b*) -> (-q_a*, q_b*)",
+          "max_mean_energy_error_meV": 0.0005000000005139782,
+          "max_full_split_error_meV": 0.001000000000139778
+        }
+      },
+      "Rstar": {
+        "valence": {
+          "mapping": "C2 about real-space b: (q_a*, q_b*) -> (-q_a*, q_b*)",
+          "max_mean_energy_error_meV": 0.0005000000005139782,
+          "max_full_split_error_meV": 0.001000000000139778
+        },
+        "conduction": {
+          "mapping": "C2 about real-space b: (q_a*, q_b*) -> (-q_a*, q_b*)",
+          "max_mean_energy_error_meV": 0.0005000000005139782,
+          "max_full_split_error_meV": 0.002000000000279556
+        }
+      },
+      "Rac": {
+        "valence": {
+          "mapping": "C2 about real-space b: (q_a*, q_b*) -> (-q_a*, q_b*)",
+          "max_mean_energy_error_meV": 0.0,
+          "max_full_split_error_meV": 0.0
+        },
+        "conduction": {
+          "mapping": "C2 about real-space b: (q_a*, q_b*) -> (-q_a*, q_b*)",
+          "max_mean_energy_error_meV": 0.0,
+          "max_full_split_error_meV": 0.0
+        }
+      }
+    },
+    "Rac_PT": {
+      "S": {},
+      "Rstar": {},
+      "Rac": {
+        "valence": {
+          "max_full_split_meV": 0.001000000000139778,
+          "p95_full_split_meV": 0.001000000000139778,
+          "max_doublet_spin_sum": 0.0,
+          "p95_doublet_spin_sum": 0.0,
+          "status": "unresolved_at_output_precision"
+        },
+        "conduction": {
+          "max_full_split_meV": 0.001000000000139778,
+          "p95_full_split_meV": 0.0009999999996956888,
+          "max_doublet_spin_sum": 0.0,
+          "p95_doublet_spin_sum": 0.0,
+          "status": "unresolved_at_output_precision"
+        }
+      }
+    }
+  },
+  "mirror_S_Rstar": {
+    "valence": {
+      "absolute_alpha_a_difference_eVA": 0.00017883920672323583,
+      "absolute_alpha_b_difference_eVA": 5.5538902434683346e-05,
+      "relative_alpha_a_difference_percent": 0.03387020068008605,
+      "relative_alpha_b_difference_percent": 0.18610317129663748
+    },
+    "conduction": {
+      "absolute_alpha_a_difference_eVA": 0.00016326185981574426,
+      "absolute_alpha_b_difference_eVA": 1.6555795552264385e-06,
+      "relative_alpha_a_difference_percent": 0.006379148287348515,
+      "relative_alpha_b_difference_percent": 0.0006771063206885585
+    }
+  }
+}

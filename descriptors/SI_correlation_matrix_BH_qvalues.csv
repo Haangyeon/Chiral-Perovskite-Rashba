@@ -1,0 +1,7 @@
+descriptor,response,n,pearson_r,pearson_p,spearman_rho,BH_q_m6,bootstrap_CI_low,bootstrap_CI_high,LOO_min,LOO_max,bootstrap_source,interpretation
+delta_inplane,mean_s_tot,9,-0.018334,0.962662,-0.016667,0.962662,-0.992091,0.979936,-0.970087,0.878562,"recomputed Round15 (100000 resamples, seed 20260907); identical to previous SI",NO DETECTABLE RELATION
+delta_inplane,mean_s_inorg,9,0.069094,0.859802,-0.033333,0.962662,-0.984125,0.940621,-0.046557,0.261494,"recomputed Round15 (100000 resamples, seed 20260907)",NO DETECTABLE RELATION
+BLDI,mean_s_tot,9,-0.040618,0.917368,0.266667,0.962662,-0.986318,0.980915,-0.94728,0.729171,"recomputed Round15 (100000 resamples, seed 20260907); identical to previous SI",NO DETECTABLE RELATION
+BLDI,mean_s_inorg,9,0.074079,0.849776,0.3,0.962662,-0.972056,0.85266,-0.029144,0.271231,"recomputed Round15 (100000 resamples, seed 20260907)",NO DETECTABLE RELATION
+bridge_bending,mean_s_tot,9,0.756479,0.018317,-0.066667,0.109903,-0.915357,0.99285,-0.055475,0.907924,"recomputed Round15 (100000 resamples, seed 20260907); identical to previous SI",FRAGILE / EXPLORATORY (nominal Pearson association only)
+bridge_bending,mean_s_inorg,9,0.174501,0.653407,-0.1,0.962662,-0.762081,0.95535,-0.219268,0.749302,"recomputed Round15 (100000 resamples, seed 20260907)",NO DETECTABLE RELATION

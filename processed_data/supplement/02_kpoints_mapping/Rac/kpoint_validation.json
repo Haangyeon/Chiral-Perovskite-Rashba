@@ -1,0 +1,55 @@
+{
+  "a_star_b_star_unit_dot": 0.0,
+  "gamma_x_line": {
+    "halfwidth_Ainv": 0.03,
+    "n": 61,
+    "spacing_Ainv": 0.001
+  },
+  "geometry_fingerprint": "fb6df051cbed6d4cb3d374fb71b792db077dd0d0a56afd74aa5de21d5c473cb7",
+  "grid": {
+    "corner_radius_Ainv": 0.01414213562373095,
+    "max_abs_cartesian_kz_Ainv": 0.0003856857660765511,
+    "n": 441,
+    "radial_subset_count": 317,
+    "square_halfwidth_Ainv": 0.01
+  },
+  "lattice_A": [
+    [
+      15.85321495963465,
+      0.0,
+      -3.30248210267248
+    ],
+    [
+      0.0,
+      7.87533932453434,
+      0.0
+    ],
+    [
+      -0.33683052951779,
+      0.0,
+      8.7267911411072
+    ]
+  ],
+  "nions": 94,
+  "plane": "unit a* and unit b* axes, fractional k3=0",
+  "poscar": "inputs/generated/POSCAR_Rac_static",
+  "poscar_sha256": "76baf69a5ae7ab2e5097fa1f2a182bb769474750b7b263c2fa73ab2517b12926",
+  "reciprocal_rows_Ainv": [
+    [
+      0.3995476255473699,
+      0.0,
+      0.015421457452644118
+    ],
+    [
+      0.0,
+      0.7978304233324072,
+      0.0
+    ],
+    [
+      0.15120092382181902,
+      0.0,
+      0.7258239932633974
+    ]
+  ],
+  "system": "Rac"
+}
