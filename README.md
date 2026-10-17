@@ -73,15 +73,24 @@ used to produce the published figures:
   SHA-256 values exactly.
 - Every correlation coefficient printed in the manuscript, the SI and Figures 6/S4 was
   recomputed from `descriptors/` and `jana_descriptor/` and agrees to the printed precision.
-- The identity α_R^ext ≡ 2E_R/k₀ holds to a maximum relative deviation of 7.95 × 10⁻¹⁴ with
-  E_R expressed in meV.
+- **`k₀` and `E_R` are not reported** in these results: `definitions.k0_ER_rule` states that the
+  model extrema lie outside the sampled line interval. The relation α = 2E_R/k₀ is an algebraic
+  identity of the parabolic-plus-linear band model (substituting E_R ≔ α²/4C and k₀ ≔ α/2C
+  reduces it to α ≡ α), so any residual is floating-point round-off rather than an independent
+  check. No such check is claimed here.
 
-**Lineage caveat.** An earlier results file dated 2 August 2026
-(`980d4848cd032151e5471e323a18857950ae7123c8690c6c91bb4e3489f15319`, 26,849 B) belongs to the
-acceptance-baseline analysis and is **not** byte-identical to the above: it differs in trailing
-floating-point digits, and in relative terms only on quantities that are numerically zero
-(the Racemate, where PT symmetry forces α → 0). This archive reproduces the September lineage,
-which is the one the current proof is built on.
+**Lineage.** The shipped `processed_data/results/final_c2_results.json`
+(`7c97fca1bf821482764f79173c1f6b0cc25f45e6b7701c4baf28ecb9ae58ee2f`, 27,472 B) is the September
+2026 lineage that Table 3 and the delivered figures are drawn from, and it is reproduced
+byte-for-byte by `code/final_c2_analysis.py` run on the inputs shipped here (verified
+17 October 2026, Windows/x64, Python 3.13.5). An earlier 2 August 2026 acceptance-baseline file
+(26,849 B) is **not** included; it differed only in trailing floating-point digits and, in
+relative terms, only on quantities that are numerically zero (the Racemate, where PT symmetry
+forces α → 0).
+
+Whole-file SHA-256 values depend on line endings. The shipped results file carries CRLF
+(609 occurrences), as produced by Python on Windows; re-running the engine on a linefeed-only
+platform gives identical *parsed* values but a different whole-file hash.
 
 ## What is deliberately *not* here
 
