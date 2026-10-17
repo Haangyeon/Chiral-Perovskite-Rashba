@@ -1,0 +1,18 @@
+Data licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The data files, structural models, processed numerical results, descriptor
+tables, and accompanying documentation in this repository are licensed under
+the Creative Commons Attribution 4.0 International License.
+
+To view a copy of this licence, visit:
+https://creativecommons.org/licenses/by/4.0/
+
+Suggested attribution:
+Angran Xia and Changwei Wang, "Data and code for: Separating global symmetry
+and local octahedral distortion in Rashba spin textures of chiral
+two-dimensional hybrid perovskites", version 1.0.0 (2026), DOI:
+10.1039/D6RA07234H.
+
+Third-party material remains subject to its original licence. In particular,
+the VASP license does not permit redistribution of POTCAR files; no POTCAR
+files are included here.

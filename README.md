@@ -116,4 +116,11 @@ platform gives identical *parsed* values but a different whole-file hash.
 
 ## Licence
 
-Not yet declared. Until a licence file is added, all rights are reserved by the authors.
+The source code is licensed under the [MIT License](LICENSE). The data files,
+structural models, processed numerical results, descriptor tables, and
+accompanying documentation are licensed under the
+[Creative Commons Attribution 4.0 International License](LICENSE-DATA).
+
+Third-party material remains subject to its original licence. In particular,
+the VASP licence does not permit redistribution of POTCAR files, so no POTCAR
+files are included.
